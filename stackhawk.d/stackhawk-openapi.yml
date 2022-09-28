@@ -29,7 +29,7 @@ app:
     # path: /openapi
     filePath: openapi.yaml
     fakerEnabled: true #default false
-    includeAllMethods: true
+    # includeAllMethods: true
     includedMethods:
       - POST
       - PUT
