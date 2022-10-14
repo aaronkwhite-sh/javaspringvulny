@@ -28,23 +28,28 @@ app:
   openApiConf:
     # path: /openapi
     filePath: openapi.yaml
-    includeAllMethods: true
+    fakerEnabled: true #default false
+    # includeAllMethods: true
     includedMethods:
       - POST
       - PUT
     customVariables:
       - field: text
         values:
-          - "customTextValue1"
-          - "customTextValue2"
-          - "customTextValue3"
+          - "$faker:Yoda.quote"
       - field: searchText
         values:
-          - "customSearchText1"
-          - "customSearchText2"
-          - "customSearchText3"
+          - "$faker:Crypto.sha512"
       - field: username
         values:
-          - "username1"
-          - "username2"
-          - "username3"
+          - "$faker:fullName"
+      - field: password
+        values:
+          - "$faker:password"
+
+#Github PR Comments and UI
+tags:
+  - name: _STACKHAWK_GIT_COMMIT_SHA
+    value: ${COMMIT_SHA:}
+  - name: _STACKHAWK_GIT_BRANCH
+    value: ${BRANCH_NAME:}
